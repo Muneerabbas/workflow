@@ -17,7 +17,7 @@ npm install
 
 ```bash
 npm start        # production
-npm run dev      # watch mode (nodemon)
+npm run dev      # watch mode (node --watch)
 ```
 
 Server listens on `process.env.PORT` or `3000`.
