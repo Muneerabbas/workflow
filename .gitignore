@@ -1,5 +1,8 @@
-node_modules
+my-backend
+*.exe
+*.test
+*.out
+coverage.out
+vendor/
 .env
-dist
-coverage
 .DS_Store

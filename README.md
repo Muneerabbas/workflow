@@ -1,31 +1,23 @@
 # my-backend
 
-A minimal Node.js + Express backend with a `/health` endpoint and GitHub Actions CI (test + depguard dependency scanning).
+A minimal Go backend with a `/health` endpoint and GitHub Actions CI (test + depguard dependency scanning).
 
 ## Requirements
 
-- Node.js 20+
-- npm
-
-## Install
-
-```bash
-npm install
-```
+- Go 1.22+
 
 ## Run
 
 ```bash
-npm start        # production
-npm run dev      # watch mode (node --watch)
+go run .
 ```
 
-Server listens on `process.env.PORT` or `3000`.
+Server listens on `PORT` env var or `3000`.
 
 ## Test
 
 ```bash
-npm test
+go test ./...
 ```
 
 ## Endpoints
@@ -38,7 +30,7 @@ npm test
 
 Two workflows run on pull requests and pushes to `main`:
 
-- `.github/workflows/ci.yml` — lint + tests on Node 20
+- `.github/workflows/ci.yml` — `go vet`, `gofmt`, `go test -race` on Go 1.22
 - `.github/workflows/depguard.yml` — dependency scan via depguard
 
 The depguard workflow requires a `DEPGUARD_API_KEY` repo secret (Settings → Secrets and variables → Actions).
