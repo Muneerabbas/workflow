@@ -4,7 +4,7 @@ A minimal Go backend with a `/health` endpoint and GitHub Actions CI (test + dep
 
 ## Requirements
 
-- Go 1.22+
+- Go 1.26+
 
 ## Run
 
@@ -30,7 +30,7 @@ go test ./...
 
 Two workflows run on pull requests and pushes to `main`:
 
-- `.github/workflows/ci.yml` — `go vet`, `gofmt`, `go test -race` on Go 1.22
+- `.github/workflows/ci.yml` — `go vet`, `gofmt`, `go test -race` on Go 1.26
 - `.github/workflows/depguard.yml` — dependency scan via depguard
 
 The depguard workflow requires a `DEPGUARD_API_KEY` repo secret (Settings → Secrets and variables → Actions).
